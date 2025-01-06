@@ -69,3 +69,51 @@ class Worker{
 // B. 1.7976931348623157E308  - Correct.  Explanation: This is one of the correct answers. The Double.MAX_VALUE constant is the largest positive value that can be represented by a Double.  
 // C. -2147483647
 // D. 4.9E-324  - Correct.  Explanation: This is the other appropriate answer. Double.MIN_VALUE, similarly to MAX_VALUE, expresses the smallest positive value that can be represented by a Double. It is also an indication of the degree of granularity of values expressed as type double. Afterall, any double value can be treated as either positive or negative. Therefore, both floating types, float and double, have a MIN_VALUE and MAX_VALUE constant. The float type has a smaller range than the type double. A floats value range is approximately 1.4E-45 to 3.4E38. 
+
+
+// Question 5.  What is the output of the following program?
+/*
+
+public class Ap004{
+  public static void main( String args[] ) {
+    new Worker().printBoolean();
+  }//end main()
+}//end class definition
+
+class Worker{
+
+  private boolean myVar;
+  
+  public void printBoolean(){
+    System.out.println(myVar);
+
+  }//end printBoolean
+}//end class definition
+        
+
+A. true
+B. false  - Correct.  Explanation: the primitive variable myVar is an uninitialized boolean declared in the Worker class. Usually variables are not usable until they are initialized. Being an instance variable, myVar, however, is automatically initialized to a default value, which for a boolean is false. Unlike C++, Java does not represent true and false as 1 and 0 numerically, a thus booleans cannot be used in arithmetic operations likes in C++.
+C. 1
+D. 0  
+*/
+
+// Question 6.  What is the output of the following program? 
+// A. Compiler Error  - Correct.  Explanation: The program will not compile because the variable myVar is not initialized and is not an instance variable. Rather, it is a local variable belonging to the printBoolean() method. Therefore, it is not able to be accessed and used, causing a compiler error reading something like "variable myVar might not have been initialized."
+// B. Runtime Error
+// C. true
+// D. false
+/*
+public class Ap005{
+  public static void main(
+                        String args[]){
+    new Worker().printBoolean();
+  }//end main()
+}//end class definition
+
+class Worker{
+  public void printBoolean(){
+    boolean myVar;
+    System.out.println(myVar);
+  }//end printBoolean()
+}//end class definition
+*/
