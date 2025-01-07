@@ -9,17 +9,17 @@ B. Runtime error
 C. Hello World  - Correct.  Explanation: the controlling class Ap001 has a main() method with a signature matching the reqs for a main() method.  Upon exection, the JVM calls the main() in the controlling class, creating an instance of Worker (and object of the Worker class) and calling the hello() method on that object.  The hello() method prints "Hello World" to the console. In this case, the object being creates is an "anonymous object" because it is not assigned to a variable.  The object is created and the hello() method is called on it in the same line of code.
 D. Goodbye Cruel World
  */
- class Ap001{
-    public static void main(String args[]){
-      new Worker().hello();
-    }//end main()
-  }//end class definition
+//  class Ap001{
+//     public static void main(String args[]){
+//       new Worker().hello();
+//     }//end main()
+//   }//end class definition
   
-  class Worker{
-    public void hello(){
-      System.out.println("Hello World");
-    }//end hello()
-  }//end class definition
+//   class Worker{
+//     public void hello(){
+//       System.out.println("Hello World");
+//     }//end hello()
+//   }//end class definition
 
 
 /*
@@ -117,3 +117,125 @@ class Worker{
   }//end printBoolean()
 }//end class definition
 */
+
+// Question 7.  What is the output of the following program? 
+/*
+A. Compiler Error
+B. Runtime Error
+C. true
+D. false - Correct.  Explanation: The program will compile and run without error. The variable myVar is a declared local boolean initialized to true. All variables can be initialized like this, whether local or not. The value of myVar is reassigned to false before being printed to the console. 
+ 
+public class Ap006{
+  public static void main(String args[]) {
+    new Worker().printBoolean();
+
+  }//end main()
+}//end class definition
+
+class Worker{
+  public void printBoolean(){
+    boolean myVar = true;
+    myVar = false;
+    System.out.println(myVar);
+  }//end printBoolean()
+}//end class definition
+*/
+
+// Question 8.  The + operator can perform numeric addition. What output is produced by the following program?
+/*
+A. Compiler Error  - Correct.  Explanation: As stated previously, boolean values cannot be used in arithmetic operations in Java. When the program attempts to add the literal value 1 to the boolean value myVar, the compiler will complain something like "bad operand types for binary operator '+'."      or  "operator '+' cannot be applied to int, boolean." ( using JDK 1.3)
+B. Runtime Error
+C. true
+D. 2
+E. 1
+
+public class Ap007{
+  public static void main(String args[]){
+    new Worker().printBoolean();
+  }//end main()
+}//end class definition
+
+class Worker{
+  public void printBoolean(){
+    boolean myVar = true;
+    System.out.println(1 + myVar);
+  }//end printBoolean()
+}//end class definition
+
+
+
+*/
+
+// Question 9.  What is the output of the following program?
+
+/*
+A. Compiler Error
+B. Runtime Error
+C. 6
+D. 6.0  - Correct.  Explanation: This program declares and initializes a double and an int and prints the sum of the two. Automatic conversion of the int to a double occurs before 3 is stored in the double variable, making it 3.0 to agree with the type double which has defines the variable x. Mixed-type arithmetic then occurs, with the double and int being added together. This causes the integer type to automatically be promoted to a floating-point type, esulting in floating-point arithmetic to be performed. The result is 6.0. 
+*/
+/*
+public class Ap008{
+  public static void main(String args[]){
+    new Worker().printMixed();
+  }//end main()
+}//end class definition
+
+class Worker{
+  public void printMixed(){
+    double x = 3;
+    int y = 3;
+    System.out.println(x+y);
+  }//end printMixed()
+}//end class definition
+*/
+
+// Question 10.  The slash (/) operator can perform division. What is the output of the following program?
+/*
+A. Compiler Error  
+B. Runtime Error  
+C. 0.33333334  
+D. 0.3333333333333333  - Correct.  Explanation: Dividing a floating type by an integer literal results in a floating-point division. The integer first is promoted to a floating-point type, and then floating arithmetic is performed. The real question is, is the literal 1.0 a float or a double? The answer is that it is a double, because all literal floating-point numbers are doubles by default. And so this program divides a double by an int, resulting in a double. The proof is in the output, which shows approx 17 digits -- the maximum value for a float in a previous question only had about 8 digits and an exponent. A double has double the precision of a float. 
+If we wanted to have the literal treated as a float rather than a double, we would append an 'f' to the end of the literal, like this: 1.0f.  The output when then be only 9 digits:  0.33333334
+
+
+
+public class Ap009{
+  public static void main(
+                        String args[]){
+    new Worker().printMixed();
+  }//end main()
+}//end class definition
+
+class Worker{
+  public void printMixed(){
+    System.out.println(1.0/3);
+  }//end printMixed()
+}//end class definition
+
+*/
+
+//*******************                                                   PROGRAMMING CHALLENGES                               *******************//
+// Question 11. write a program with the following description:
+/*************************************
+This program will not compile without errors. Make the necessary changes to the program so that it compiles and produces the following output:
+
+ITSE
+2321
+*********************************************/
+/*
+*/
+ class Ap0010a1{
+  public static void main(String args[]){
+    System.out.println("ITSE");
+    new Worker().doIt();
+  }//end main()
+}//end class definition 
+//=======================================================//
+
+class Worker{
+  public void doIt(){
+    System.out.println("2321");
+  }//end doIt()
+}//end class definition
+ 
