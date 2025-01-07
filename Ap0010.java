@@ -224,7 +224,7 @@ ITSE
 2321
 *********************************************/
 /*
-*/
+
  class Ap0010a1{
   public static void main(String args[]){
     System.out.println("ITSE");
@@ -239,3 +239,38 @@ class Worker{
   }//end doIt()
 }//end class definition
  
+*/
+
+// Question 12. write a program with the following description, starting from the code fragment provided:
+/*
+write a method named doIt that: 1.) receives and dsplays an incoming parameter of type int. 2.) produces output like the following, depending on the value of the incoming parameter:
+484495695
+484495695
+ */
+/**/
+import java.util.Random;
+import java.util.Date;
+
+ class Ap0010b1{
+  public static void main(String args[]){
+    //Create a random number for testing purposes
+    Random random = new Random(new Date().getTime());
+    int intVar = random.nextInt();
+    
+    
+    int var = intVar;
+    System.out.println(var);
+    new Worker().doIt(var);
+  }//end main()
+}//end class definition 
+//=======================================================//
+
+class Worker{
+  //-----------------------------------------------------//
+  //Student: insert the method named doIt between these lines.
+    public void doIt(int incoming){
+        System.out.println(incoming);
+    }//end doIt()
+  //-----------------------------------------------------//
+}//end class definition
+//=======================================================//
