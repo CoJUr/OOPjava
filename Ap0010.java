@@ -362,23 +362,59 @@ write a method named doIt that: 1.) receives and dsplays an incoming parameter o
 
 // Question 16. Beginning with the code provided, modify the program's method doIt() so the program displays  3.3333333333333335 instead of 3    Then modify it again so it displays   3.3333333 instead of 3
 
- class Ap0010f1{
+//  class Ap0010f1{
+//     public static void main(String args[]){
+//       new Worker().doIt();
+//     }//end main()
+//   }//end class definition 
+//   //=======================================================//
+  
+//   class Worker{
+//     public void doIt()
+//     {
+
+//         // to make it print 3.3333333333333335, which has the amount of digits indicative of type double, we need to divide a double by an int.  The literal 10 is an int, so we need to cast it to a double to force the division to be floating-point.  The result will be a double.
+
+//       System.out.println( (double)10/3 );  // 3.3333333333333335
+
+//       // to achieve the output 3.3333333, which indicates a float, we need to cast the result of the division to a float.  The result will be a float.
+//         System.out.println( (float)10/3 );  // 3.3333333
+//     }//end doIt()
+//   }//end class definition
+  //=======================================================//
+
+//   // Question 17.  Edit the provided program's doIt() method to display: 2048          instead of 2730. Hint: the values involved are interesting.
+//    class Ap0010g1{
+//     public static void main(String args[]){
+//       new Worker().doIt(16384);
+//     }//end main()
+//   }//end class definition
+//   //=======================================================//
+  
+//   class Worker{
+//     public void doIt(int val){
+//       System.out.println(val/6);
+//       // prints 2730
+
+//         System.out.println(val/8); // significance of dividing 16,384 by 8: RAM is segmented into 8-bit bytes.  16,384 divided by 8 is 2048, which is the number of bytes in 16,384 bits. 2048 is also the number of bytes in 2 kilobytes. on the other hand 2730 being the quotient of 16,384 by 6 is not a significant number in computer science. RAM is not and has never been segmented into 6-bit bytes.
+//     }//end doIt()
+//   }//end class definition
+//   //=======================================================//
+
+// Question 18.  This program also will not compile without errors. Make the corrections necessary to compile and run the program, producing the following output:
+// false
+
+ class Ap0010h1{
     public static void main(String args[]){
       new Worker().doIt();
     }//end main()
-  }//end class definition 
+  }//end class definition
   //=======================================================//
   
   class Worker{
-    public void doIt()
-    {
-
-        // to make it print 3.3333333333333335, which has the amount of digits indicative of type double, we need to divide a double by an int.  The literal 10 is an int, so we need to cast it to a double to force the division to be floating-point.  The result will be a double.
-
-      System.out.println( (double)10/3 );  // 3.3333333333333335
-
-      // to achieve the output 3.3333333, which indicates a float, we need to cast the result of the division to a float.  The result will be a float.
-        System.out.println( (float)10/3 );  // 3.3333333
+    public void doIt(){
+      boolean var = false; // initializing the boolean variable
+      System.out.println(var);
     }//end doIt()
   }//end class definition
   //=======================================================//
