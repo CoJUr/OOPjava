@@ -248,29 +248,137 @@ write a method named doIt that: 1.) receives and dsplays an incoming parameter o
 484495695
  */
 /**/
-import java.util.Random;
-import java.util.Date;
+// import java.util.Random;
+// import java.util.Date;
 
- class Ap0010b1{
-  public static void main(String args[]){
+//  class Ap0010b1{
+//   public static void main(String args[]){
     //Create a random number for testing purposes
-    Random random = new Random(new Date().getTime());
-    int intVar = random.nextInt();
+    // Random random = new Random(new Date().getTime());
+    // int intVar = random.nextInt();
     
     
-    int var = intVar;
-    System.out.println(var);
-    new Worker().doIt(var);
-  }//end main()
-}//end class definition 
+    // int var = intVar;
+    // System.out.println(var);
+    // new Worker().doIt(var);
+//   }//end main()
+// }//end class definition 
 //=======================================================//
 
-class Worker{
+// class Worker{
   //-----------------------------------------------------//
   //Student: insert the method named doIt between these lines.
-    public void doIt(int incoming){
-        System.out.println(incoming);
-    }//end doIt()
+    // public void doIt(int incoming){
+    //     System.out.println(incoming);
+    // }//end doIt()
   //-----------------------------------------------------//
-}//end class definition
+// }//end class definition
 //=======================================================//
+
+// Question 13. Use the code fragment provided to write a program with the following description:  Write a method named doIt that returns the largest value of type int, but converted to a type float. The result should be 2.14748365E9.
+
+
+//  class Ap0010c1{
+//   public static void main(String args[])
+//   {
+//     float val = new Worker().doIt();
+//     System.out.println(val);
+//   }//end main()
+// }//end class definition 
+// //=======================================================//
+
+// class Worker{
+//   //-----------------------------------------------------//
+//   //Insert the method named doIt between these lines.
+
+//     public float doIt(){
+//         return (float)Integer.MAX_VALUE;
+//     }//end doIt()
+
+//   //-----------------------------------------------------//
+// }//end class definition
+// //=======================================================//
+
+// Question 14. Use the code fragment provided to write a program with the following description: Write method named doIt that receives a parameter of type double, then converts that value to an int, and returns the result. The output should be something like the following, but returning different values depending on the incoming parameter:
+// 6.672032181818181E8 
+// 667203218
+
+// import java.util.Random;
+// import java.util.Date;
+
+//  class Ap0010d1{
+//   public static void main(String args[]){
+
+//     Random random = new Random(new Date().getTime()); // Create a random number for testing purposes
+//     int intVar = random.nextInt();
+    
+//     double var = intVar/1.1;  // divinding by 1.1 to get a double value -- otherwise the result would be an int. Remember, the literal 1.1 is a double by default. Forces the division operation to be floating-point.
+//     System.out.println(var);
+//     System.out.println(new Worker().doIt(var));
+//   }//end main()
+// }//end class definition 
+// //=======================================================//
+
+// class Worker{
+//   //-----------------------------------------------------//
+//   //Student: insert the method named doIt
+//     public int doIt(double incoming){
+//         return (int)incoming;
+//     }//end doIt()
+//   //-----------------------------------------------------//
+// }//end class definition
+// //=======================================================//
+
+
+// Question 15. The following program cannot compile without errors. Make the necessary changes to the program so that it compiles and produces output similar to the following (will be different each run): 
+//-1.30240579E8
+//-1.30240579E8
+
+// import java.util.Random;
+// import java.util.Date;
+
+//  class Ap0010e1{
+//   public static void main(String args[]){
+
+//     Random random = new Random(new Date().getTime());
+//     double doubleVar = random.nextInt()/1.0;
+
+
+//     double var = doubleVar;
+//     System.out.println(doubleVar);
+//     new Worker().doIt(doubleVar);
+//   }//end main()
+// }//end class definition
+// //=======================================================//
+
+// class Worker{
+//   public void doIt(double val)
+//   {
+//     double var = val;  
+//     System.out.println(var);
+//   }//end doIt()
+// }//end class definition
+
+
+// Question 16. Beginning with the code provided, modify the program's method doIt() so the program displays  3.3333333333333335 instead of 3    Then modify it again so it displays   3.3333333 instead of 3
+
+ class Ap0010f1{
+    public static void main(String args[]){
+      new Worker().doIt();
+    }//end main()
+  }//end class definition 
+  //=======================================================//
+  
+  class Worker{
+    public void doIt()
+    {
+
+        // to make it print 3.3333333333333335, which has the amount of digits indicative of type double, we need to divide a double by an int.  The literal 10 is an int, so we need to cast it to a double to force the division to be floating-point.  The result will be a double.
+
+      System.out.println( (double)10/3 );  // 3.3333333333333335
+
+      // to achieve the output 3.3333333, which indicates a float, we need to cast the result of the division to a float.  The result will be a float.
+        System.out.println( (float)10/3 );  // 3.3333333
+    }//end doIt()
+  }//end class definition
+  //=======================================================//
